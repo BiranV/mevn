@@ -25,7 +25,7 @@ mongoose
   .catch((arr) => console.log(err));
 
 //routes prefix
-app.use("/api/posts", require("./routes/posts"));
+app.use("/", require("./routes/posts"));
 
 //start server
 app.listen(port, () => console.log(`Server is running on port ${port}`));
