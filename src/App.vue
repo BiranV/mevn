@@ -37,7 +37,7 @@
                 href="http://www.google.com"
                 target="_blank"
               >
-                Download my CV
+                Download my CV!
               </v-btn>
             </div>
           </v-list-item-content>
