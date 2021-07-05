@@ -25,7 +25,11 @@ mongoose
   .catch((arr) => console.log(err));
 
 //routes prefix
-app.use("/", require("./routes/posts"));
+app.use("/api/posts", require("./routes/posts"));
+app.use(express.static(__dirname + "/dist/"));
+app.get(/.*/, function (req, res) {
+  res.sendFile(__dirname + "/dist/index.html");
+});
 
 //start server
 app.listen(port, () => console.log(`Server is running on port ${port}`));
