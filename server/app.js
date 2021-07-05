@@ -27,12 +27,5 @@ mongoose
 //routes prefix
 app.use("/api/posts", require("./routes/posts"));
 
-// if(process.env.NODE_ENV === 'producttion'){
-//   //static folder
-//   app.use(express.static(__dirname + '/public'));
-
-//   //handle SPA
-//   app.get(/.*/, (req,res) => res.sendFile(__dirname + '/public/index.html'));
-// }
 //start server
 app.listen(port, () => console.log(`Server is running on port ${port}`));
