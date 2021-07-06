@@ -1,0 +1,39 @@
+{
+  "name": "mevn-roject",
+  "author": "Biran Varon",
+  "version": "0.1.0",
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build"
+  },
+  "dependencies": {
+    "@vue/composition-api": "^1.0.0-rc.12",
+    "apexcharts": "^3.27.1",
+    "axios": "^0.21.1",
+    "core-js": "^3.6.5",
+    "firebase": "^8.6.8",
+    "install": "^0.13.0",
+    "npm": "^7.19.0",
+    "vue": "^2.6.11",
+    "vue-apexcharts": "^1.6.1",
+    "vue-circular-count-down-timer": "^1.0.4",
+    "vue-router": "^3.2.0",
+    "vue-simple-alert": "^1.1.1",
+    "vuetify": "^2.4.0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-router": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "sass": "~1.32.0",
+    "sass-loader": "^10.0.0",
+    "vue-cli-plugin-vuetify": "~2.4.1",
+    "vue-template-compiler": "^2.6.11",
+    "vuetify-loader": "^1.7.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}
