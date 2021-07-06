@@ -38,11 +38,6 @@
 <script>
 export default {
   data: () => ({
-    user: {
-      initials: "CV",
-      fullName: "Biran Varon",
-      email: "Biraniv@gmail.com",
-    },
     items: [
       { text: "Home", icon: "mdi-home", link: "/" },
       { text: "Food Blog", icon: "mdi-chef-hat", link: "/foodblog" },
