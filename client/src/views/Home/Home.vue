@@ -18,7 +18,7 @@
                   <v-divider></v-divider>
                    <p><div>
                     a to do list app using MongoDB, Express.js & Node.js on the
-                    backend to create RestFul API, and using Vue.js & Vuetify on
+                    backend to create RESTful API, and Vue.js & Vuetify on
                     the frontend.
                   </div></p></v-card-text
                 >
