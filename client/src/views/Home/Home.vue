@@ -4,8 +4,8 @@
       <h1>Welcome to my MEVN Project</h1>
     </v-col>
 
-    <v-card :to="'/foodblog'">
-      <v-card-title>Food Blog</v-card-title>
+    <v-card :to="'/todo-list'">
+      <v-card-title>To Do List</v-card-title>
       <v-card-text>
         <v-divider></v-divider>
         <v-container>
