@@ -48,7 +48,11 @@ export default {
       itemss: [],
       items: [
         { text: "Home", icon: "mdi-home-outline", link: "/" },
-        { text: "Todo List", icon: "mdi-format-list-checks", link: "/todo-list" },
+        {
+          text: "Todo List",
+          icon: "mdi-format-list-checks",
+          link: "/todo-list",
+        },
         { text: "Math Quiz", icon: "mdi-math-integral", link: "/math-quiz" },
         { text: "Chat", icon: "mdi-chat-outline", link: "/chat" },
       ],
@@ -62,17 +66,12 @@ export default {
   background-image: -webkit-linear-gradient(65deg, #bdbdbd 50%, #e9e9e9 50%);
 }
 .scroll {
-  overflow-y: scroll;
+  overflow-x: auto;
   height: 500px;
 }
 
 .scroll::-webkit-scrollbar {
   width: 15px;
-}
-
-.scroll::-webkit-scrollbar-track {
-  background: #e6e6e6;
-  border-left: 1px solid #dadada;
 }
 
 .scroll::-webkit-scrollbar-thumb {

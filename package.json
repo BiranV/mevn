@@ -4,11 +4,11 @@
   "description": "",
   "author": "Biran Varon",
   "scripts": {
-    "build": "npm install --prefix client && npm run build --prefix client",
+    "server": "nodemon server.js --ignore 'client/'",
     "client": "npm run serve --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "server": "nodemon server.js --ignore 'client/'",
-    "start": "node server.js"
+    "start": "node server.js",
+    "build": "npm install --prefix client && npm run build --prefix client"
   },
   "main": "server.js",
   "dependencies": {
@@ -19,14 +19,16 @@
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "fs": "^0.0.1-security",
-    "mongoose": "^5.12.13",
+    "mongodb": "^3.6.8",
+    "mongoose": "^5.13.2",
     "morgan": "^1.10.0",
     "multer": "^1.4.2"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
     "concurrently": "^6.2.0",
-    "nodemon": "^2.0.9"
+    "nodemon": "^2.0.9",
+    "vue-cli-plugin-vuetify": "~2.4.1"
   },
   "engines": {
     "node": "14.15.1"
