@@ -1,6 +1,6 @@
 <template>
   <v-app id="inspire">
-    <v-app-bar app color="white" flat>
+    <v-app-bar app color="#F5F5F5" flat>
       <v-avatar
         :color="$vuetify.breakpoint.smAndDown ? 'grey darken-1' : 'transparent'"
       ></v-avatar>
@@ -16,8 +16,8 @@
 
       <v-btn
         icon
-        id="no-background-hover"
-        large
+        x-large
+        color="primary"
         target="_blank"
         href="https://github.com/BiranV/mevn"
       >
@@ -29,7 +29,7 @@
       <v-container>
         <v-row justify="center">
           <v-col cols="12" sm="8">
-            <v-card height="600px">
+            <v-card class="rounded-xl" height="600px">
               <v-card-text>
                 <router-view></router-view>
               </v-card-text>
@@ -62,8 +62,8 @@ export default {
 </script>
 <style>
 .v-main__wrap {
-  background-color: #e4e9fd;
-  background-image: -webkit-linear-gradient(65deg, #bdbdbd 50%, #e9e9e9 50%);
+  /* background: url("../bg.jpg"); */
+  background-color: #bdbdbd;
 }
 .scroll {
   overflow-x: auto;
@@ -82,5 +82,15 @@ export default {
 
 .scroll::-webkit-scrollbar-thumb:hover {
   background: black;
+}
+
+.shadow-nested {
+  color: rgb(139, 139, 139);
+  font: bold 36px Helvetica, Arial, Sans-Serif;
+  text-shadow: 1px 1px #b3e5fc, 2px 2px #b3e5fc, 3px 3px #b3e5fc;
+  -webkit-transition: all 0.12s ease-out;
+  -moz-transition: all 0.12s ease-out;
+  -ms-transition: all 0.12s ease-out;
+  -o-transition: all 0.12s ease-out;
 }
 </style>

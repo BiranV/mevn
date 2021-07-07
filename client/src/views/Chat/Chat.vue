@@ -2,7 +2,7 @@
   <div v-if="this.username == '' || this.username == null" class="view login">
     <v-container>
       <v-col align="center">
-        <h1>Login to Chat</h1>
+        <h1 class="shadow-nested">Login to Chat</h1>
         <v-col sm="6">
           <v-text-field
             filled
@@ -45,15 +45,16 @@
       <v-row align="center" justify="center">
         <v-card flat tile>
           <v-row justify="center" align="center">
-            <v-text-field hide-details
+            <v-text-field
+              hide-details
               filled
               outlined
               dense
               v-model="inputMessage"
               placeholder="Write a message..."
               @keyup.enter="sendMseeages()"
-            /><v-col >
-              <v-btn  color="green" dark @click="sendMseeages()">Send</v-btn>
+            /><v-col>
+              <v-btn color="green" dark @click="sendMseeages()">Send</v-btn>
             </v-col></v-row
           >
         </v-card>
@@ -121,7 +122,7 @@ export default {
       this.inputMessage = "";
     },
   },
-    updated() {
+  updated() {
     this.scrollToEnd();
   },
 };

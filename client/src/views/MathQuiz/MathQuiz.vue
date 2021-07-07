@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-col align="center">
-      <h1>Math Quiz</h1>
+      <h1 class="shadow-nested">Math Quiz</h1>
       <OperatorQuiz
         @back="clearOperator"
         :operator="operator"

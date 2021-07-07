@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-col align="center">
-      <h1>To Do List</h1>
+      <h1 class="shadow-nested">To Do List</h1>
     </v-col>
 
     <v-container>
@@ -32,7 +32,7 @@
     </v-container>
     <br />
     <v-col align="center" justify="center">
-      <v-card outlined class="rounded-xl scroll" max-height="400" width="500">
+      <v-card elevation="0" class="scroll" max-height="400" width="500">
         <v-container v-for="(item, index) in items" :key="item._id">
           <v-row align="center" justify="center">
             <v-hover>
