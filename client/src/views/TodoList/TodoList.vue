@@ -52,7 +52,7 @@
                         hide-details
                         outlined
                         dense
-                        v-model="newdescription"
+                        v-model="editedDescription"
                         @keyup.enter="updateItem(item, index)"
                       />
                     </div>
@@ -60,20 +60,20 @@
                       {{ item.description }}
                     </div>
                     <div>
-                      <span v-if="!isSelected(item)">
+                      <span v-if="isSelected(item)">
+                        <v-icon @click="unselect()" size="20">
+                          mdi-close
+                        </v-icon>
+                        <v-icon @click="updateItem(item, index)" size="20">
+                          mdi-content-save
+                        </v-icon></span
+                      >
+                      <span v-else>
                         <v-icon @click="select(item)" size="20">
                           mdi-pencil
                         </v-icon>
                         <v-icon @click="removeItem(item, index)" size="20">
                           mdi-delete
-                        </v-icon></span
-                      >
-                      <span v-else>
-                        <v-icon @click="selected = {}" size="20">
-                          mdi-close
-                        </v-icon>
-                        <v-icon @click="updateItem(item, index)" size="20">
-                          mdi-content-save
                         </v-icon></span
                       >
                     </div>
@@ -95,7 +95,7 @@ export default {
     return {
       items: [],
       description: "",
-      newdescription: "",
+      editedDescription: "",
       selected: {},
       snackbar: true,
       timeout: 2000,
@@ -108,11 +108,12 @@ export default {
 
   methods: {
     async initialize() {
-      this.items = [];
+      let arr = [];
       const res = await axios.get("api/posts/");
       res.data.forEach((el) => {
-        this.items.push(el);
+        arr.push(el);
       });
+      this.items = arr;
     },
     async addItem() {
       const response = await axios.post("api/posts/", {
@@ -125,20 +126,23 @@ export default {
       await axios.delete("api/posts/" + item._id);
       this.items.splice(index, 1);
     },
-    updateItem(item, index) {
-      let record = { description: this.newdescription };
-      axios.put("api/posts/" + item._id, record).then(() => {
-        this.initialize(item, index);
+    async updateItem(item, index) {
+      await axios.put("api/posts/" + item._id, {
+        description: this.editedDescription,
       });
-
-      this.selected = {};
+      this.initialize();
+      this.unselect();
     },
     select(item) {
       this.selected = item;
-      this.newdescription = item.description;
+      this.editedDescription = item.description;
     },
     isSelected(item) {
       return this.selected._id === item._id;
+    },
+    unselect() {
+      this.selected = {};
+      this.editedDescription = "";
     },
   },
 };
