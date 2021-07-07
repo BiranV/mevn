@@ -25,7 +25,7 @@
 
         <h2>Welcome, {{ username }}</h2>
 
-        <v-card outlined class="chat-box scroll">
+        <v-card outlined class="chat-box scroll rounded-lg">
           <div
             v-for="message in messages"
             :key="message.key"

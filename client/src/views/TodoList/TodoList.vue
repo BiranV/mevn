@@ -32,7 +32,7 @@
     </v-container>
     <br />
     <v-col align="center" justify="center">
-      <v-card elevation="0" class="scroll" max-height="400" width="500">
+      <v-card outlined class="scroll rounded-lg" max-height="400" width="500">
         <v-container v-for="(item, index) in items" :key="item._id">
           <v-row align="center" justify="center">
             <v-hover>

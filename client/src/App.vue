@@ -1,10 +1,6 @@
 <template>
   <v-app id="inspire">
     <v-app-bar app color="#F5F5F5" flat>
-      <v-avatar
-        :color="$vuetify.breakpoint.smAndDown ? 'grey darken-1' : 'transparent'"
-      ></v-avatar>
-
       <v-tabs centered class="ml-n9" color="grey darken-1">
         <v-tab v-for="(item, i) in items" :key="i" :to="item.link" link>
           <v-col
@@ -30,9 +26,7 @@
         <v-row justify="center">
           <v-col cols="12" sm="8">
             <v-card class="rounded-xl" height="600px">
-              <v-card-text>
-                <v-card elevation="0" class="scroll" height="580px"><router-view></router-view></v-card>
-              </v-card-text>
+              <router-view></router-view>
             </v-card>
           </v-col>
         </v-row>
