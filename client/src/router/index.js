@@ -1,8 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home/Home.vue";
-import Post from "../views/FoodBlog/Post.vue";
-import FoodBlog from "../views/FoodBlog/FoodBlog.vue";
+import TodoList from "../views/TodoList/TodoList.vue";
 import MathQuiz from "../views/MathQuiz/MathQuiz.vue";
 import Chat from "../views/Chat/Chat.vue";
 
@@ -15,18 +14,13 @@ const routes = [
     component: Home,
   },
   {
-    path: "/foodblog",
-    name: "foodblog",
-    component: FoodBlog,
-  },
-  {
-    path: "/post/:id",
-    name: "post",
-    component: Post,
+    path: "/todo-list",
+    name: "todo-list",
+    component: TodoList,
   },
   {
     path: "/math-quiz",
-    name: "mathquiz",
+    name: "math-quiz",
     component: MathQuiz,
   },
   {

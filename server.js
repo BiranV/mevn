@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 const port = process.env.PORT || 3000;
 const cors = require("cors");
 const morgan = require("morgan");
-const postsRoutes = require("./routes/posts");
+const postAPI = require("./routes/api/posts");
 
 app.use(cors());
 app.use(express.json());
@@ -25,7 +25,7 @@ mongoose
   .then(() => console.log("Connected to the database!"))
   .catch((err) => console.log(err));
 
-app.use("/api/posts", postsRoutes);
+app.use("/api/posts", postAPI);
 app.use(express.static(__dirname + "/dist/"));
 app.get(/.*/, function (req, res) {
   res.sendFile(__dirname + "/dist/index.html");

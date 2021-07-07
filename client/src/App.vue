@@ -14,7 +14,13 @@
         </v-tab>
       </v-tabs>
 
-      <v-btn icon id="no-background-hover" large target="_blank" href="https://github.com/BiranV/mevn">
+      <v-btn
+        icon
+        id="no-background-hover"
+        large
+        target="_blank"
+        href="https://github.com/BiranV/mevn"
+      >
         <v-icon medium>mdi-github</v-icon>
       </v-btn>
     </v-app-bar>
@@ -37,14 +43,17 @@
 
 <script>
 export default {
-  data: () => ({
-    items: [
-      { text: "Home", icon: "mdi-home", link: "/" },
-      { text: "Food Blog", icon: "mdi-chef-hat", link: "/foodblog" },
-      { text: "Math Quiz", icon: "mdi-math-integral", link: "/math-quiz" },
-      { text: "Chat", icon: "mdi-chat", link: "/chat" },
-    ],
-  }),
+  data() {
+    return {
+      itemss: [],
+      items: [
+        { text: "Home", icon: "mdi-home-outline", link: "/" },
+        { text: "Todo List", icon: "mdi-format-list-checks", link: "/todo-list" },
+        { text: "Math Quiz", icon: "mdi-math-integral", link: "/math-quiz" },
+        { text: "Chat", icon: "mdi-chat-outline", link: "/chat" },
+      ],
+    };
+  },
 };
 </script>
 <style>

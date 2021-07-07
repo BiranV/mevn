@@ -52,7 +52,7 @@
               v-model="inputMessage"
               placeholder="Write a message..."
               @keyup.enter="sendMseeages()"
-            /></v-col><v-col >
+            /><v-col >
               <v-btn  color="green" dark @click="sendMseeages()">Send</v-btn>
             </v-col></v-row
           >

@@ -9,9 +9,9 @@
       <v-card-text>
         <v-divider></v-divider>
         <v-container>
-          a full-stack MEVN project using MongoDB, Express.js & Node.js in
-          the backend to create RestFul API for the application, and using Vue.js &
-          Vuetify in the frontend.
+          a To Do List app using MongoDB, Express.js & Node.js on
+          the backend to create RestFul API, and using Vue.js &
+          Vuetify on the frontend.
         </v-container></v-card-text
       >
     </v-card>
