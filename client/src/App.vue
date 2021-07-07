@@ -31,7 +31,7 @@
           <v-col cols="12" sm="8">
             <v-card class="rounded-xl" height="600px">
               <v-card-text>
-                <router-view></router-view>
+                <v-card elevation="0" class="scroll" height="580px"><router-view></router-view></v-card>
               </v-card-text>
             </v-card>
           </v-col>
@@ -62,7 +62,6 @@ export default {
 </script>
 <style>
 .v-main__wrap {
-  /* background: url("../bg.jpg"); */
   background-color: #bdbdbd;
 }
 .scroll {
