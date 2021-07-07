@@ -6,6 +6,7 @@ const port = process.env.PORT || 3000;
 const cors = require("cors");
 const morgan = require("morgan");
 const postAPI = require("./routes/api/posts");
+const path = require("path");
 
 app.use(cors());
 app.use(express.json());
@@ -26,8 +27,11 @@ mongoose
   .catch((err) => console.log(err));
 
 app.use("/api/posts", postAPI);
-app.use(express.static(__dirname + "/dist/"));
-app.get(/.*/, function (req, res) {
-  res.sendFile(__dirname + "/dist/index.html");
-});
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/dist"));
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "client", "dist", "index.html"));
+  });
+}
 app.listen(port, () => console.log(`Server is running on port ${port}`));
