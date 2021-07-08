@@ -57,6 +57,7 @@
                       />
                     </div>
                     <div v-else>
+                      <h4>{{ item.date.substring(0, 10).split('-').reverse().join('-') }}</h4>
                       {{ item.description }}
                     </div>
                     <div>
