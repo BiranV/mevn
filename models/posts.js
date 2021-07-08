@@ -9,6 +9,8 @@ const postSchema = new Schema({
     type: Date,
     default: Date.now,
   },
+  done: false,
+  
 });
 
 module.exports = model("Post", postSchema);

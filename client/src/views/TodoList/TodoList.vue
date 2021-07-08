@@ -38,6 +38,7 @@
             <v-hover>
               <template v-slot:default="{ hover }">
                 <v-card
+                  @dblclick="doneTask(item)"
                   color="blue lighten-5"
                   class="ma-2"
                   :elevation="hover ? 2 : 0"
@@ -57,8 +58,21 @@
                       />
                     </div>
                     <div v-else>
-                      <h4>{{ item.date.substring(0, 10).split('-').reverse().join('/') }}</h4>
-                      {{ item.description }}
+                      <h4>
+                        {{
+                          item.date
+                            .substring(0, 10)
+                            .split("-")
+                            .reverse()
+                            .join("/")
+                        }}
+                      </h4>
+                      <span
+                        :class="{
+                          'text-decoration-line-through ': item.done == true,
+                        }"
+                        >{{ item.description }}</span
+                      >
                     </div>
                     <div>
                       <span v-if="isSelected(item)">
@@ -144,6 +158,9 @@ export default {
     unselect() {
       this.selected = {};
       this.editedDescription = "";
+    },
+    doneTask(item) {
+      item.done = !item.done;
     },
   },
 };
