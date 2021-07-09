@@ -125,16 +125,40 @@ export default {
       };
       const methodToUse = methods[this.operator];
 
-      this.answers = [];
-      this.answers.push(methodToUse(this.operandLeft + 1, this.operandRight));
-      this.answers.push(methodToUse(this.operandLeft - 1, this.operandRight));
-      this.answers.push(methodToUse(this.operandLeft + 2, this.operandRight));
-      this.answers.push(methodToUse(this.operandLeft - 2, this.operandRight));
+      if (this.operator == "/") {
+        this.answers = [];
+        this.answers.push(
+          methodToUse(this.operandLeft + 1, this.operandRight).toFixed(2)
+        );
+        this.answers.push(
+          methodToUse(this.operandLeft - 1, this.operandRight).toFixed(2)
+        );
+        this.answers.push(
+          methodToUse(this.operandLeft + 2, this.operandRight).toFixed(2)
+        );
+        this.answers.push(
+          methodToUse(this.operandLeft - 2, this.operandRight).toFixed(2)
+        );
 
-      this.expectedAnswer = methodToUse(this.operandLeft, this.operandRight);
-      this.answers[
-        parseInt(Math.random() * this.answers.length)
-      ] = this.expectedAnswer;
+        this.expectedAnswer = methodToUse(
+          this.operandLeft,
+          this.operandRight
+        ).toFixed(2);
+        this.answers[
+          parseInt(Math.random() * this.answers.length)
+        ] = this.expectedAnswer;
+      } else {
+        this.answers = [];
+        this.answers.push(methodToUse(this.operandLeft + 1, this.operandRight));
+        this.answers.push(methodToUse(this.operandLeft - 1, this.operandRight));
+        this.answers.push(methodToUse(this.operandLeft + 2, this.operandRight));
+        this.answers.push(methodToUse(this.operandLeft - 2, this.operandRight));
+
+        this.expectedAnswer = methodToUse(this.operandLeft, this.operandRight);
+        this.answers[
+          parseInt(Math.random() * this.answers.length)
+        ] = this.expectedAnswer;
+      }
     },
     tryAgain() {
       this.score = 0;
