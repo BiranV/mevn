@@ -142,7 +142,7 @@ export default {
       this.items.splice(index, 1);
     },
     async updateItem(item, index) {
-      await axios.put("api/posts/" + item._id, {
+      await axios.patch("api/posts/" + item._id, {
         description: this.editedDescription,
       });
       this.initialize();
@@ -159,8 +159,11 @@ export default {
       this.selected = {};
       this.editedDescription = "";
     },
-    doneTask(item) {
+    async doneTask(item) {
       item.done = !item.done;
+      await axios.patch("api/posts/" + item._id, {
+        done: item.done
+      });
     },
   },
 };
