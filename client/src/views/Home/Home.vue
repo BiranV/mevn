@@ -79,7 +79,7 @@ export default {};
 .shadow {
   color: rgb(139, 139, 139);
   font: bold 52px Helvetica, Arial, Sans-Serif;
-  text-shadow: 1px 1px #b3e5fc, 2px 2px #b3e5fc, 3px 3px #b3e5fc;
+  text-shadow: 4px 4px #b3e5fc, 2px 2px #b3e5fc, 3px 3px #b3e5fc;
   -webkit-transition: all 0.12s ease-out;
   -moz-transition: all 0.12s ease-out;
   -ms-transition: all 0.12s ease-out;
