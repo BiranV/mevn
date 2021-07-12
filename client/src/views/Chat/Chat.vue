@@ -42,9 +42,9 @@
       </v-col>
     </v-container>
     <v-container>
-      <v-row align="center" justify="center">
+      <v-row no-gutters align="center" justify="center">
         <v-card flat tile>
-          <v-row justify="center" align="center">
+          <v-row no-gutters justify="center" align="center">
             <v-text-field
               hide-details
               filled
@@ -53,7 +53,7 @@
               v-model="inputMessage"
               placeholder="Write a message..."
               @keyup.enter="sendMseeages()"
-            /><v-col>
+            /><v-col align="center">
               <v-btn color="green" dark @click="sendMseeages()">Send</v-btn>
             </v-col></v-row
           >
