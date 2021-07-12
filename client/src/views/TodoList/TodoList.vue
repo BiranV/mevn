@@ -162,7 +162,7 @@ export default {
     async doneTask(item) {
       item.done = !item.done;
       await axios.patch("api/posts/" + item._id, {
-        done: item.done
+        done: item.done,
       });
     },
   },

@@ -60,7 +60,7 @@ export default {
 }
 .scroll {
   overflow-x: auto;
-  height: 500px;
+  height: 480px;
 }
 
 .scroll::-webkit-scrollbar {
