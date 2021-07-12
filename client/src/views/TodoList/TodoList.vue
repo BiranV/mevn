@@ -5,101 +5,109 @@
     </v-col>
 
     <v-container>
-      <v-row align="center" justify="center">
-        <v-card flat tile>
-          <v-row justify="center" align="center">
-            <v-text-field
-              hide-details
-              filled
-              outlined
-              rounded
-              dense
-              v-model="description"
-              label="Add a task"
-              @keyup.enter="addItem()"
-            /><v-col>
-              <v-btn
-                color="green"
-                class="white--text"
-                :disabled="!description"
-                @click="addItem()"
-                >ADD</v-btn
-              >
-            </v-col></v-row
-          >
-        </v-card>
-      </v-row>
-    </v-container>
-    <br />
-    <v-col align="center" justify="center">
-      <v-card outlined class="scroll rounded-lg" max-height="400" width="500">
-        <v-container v-for="(item, index) in items" :key="item._id">
-          <v-row align="center" justify="center">
-            <v-hover>
-              <template v-slot:default="{ hover }">
-                <v-card
-                  @dblclick="doneTask(item)"
-                  color="blue lighten-5"
-                  class="ma-2"
-                  :elevation="hover ? 2 : 0"
-                  width="400"
+      <v-col align="center" justify="center">
+        <v-row align="center" justify="center" no-gutters>
+          <v-card flat tile>
+            <v-row justify="center" align="center">
+              <v-text-field
+                hide-details
+                filled
+                outlined
+                rounded
+                dense
+                v-model="description"
+                label="Add a task"
+                @keyup.enter="addItem()"
+              /><v-col>
+                <v-btn
+                  color="green"
+                  class="white--text"
+                  :disabled="!description"
+                  @click="addItem()"
+                  >ADD</v-btn
                 >
-                  <v-card-text class="d-flex justify-space-between ma-2">
-                    <v-avatar color="blue" rounded size="20">
-                      <span class="white--text">{{ index + 1 }}</span>
-                    </v-avatar>
-                    <div v-if="isSelected(item)">
-                      <v-text-field
-                        hide-details
-                        outlined
-                        dense
-                        v-model="editedDescription"
-                        @keyup.enter="updateItem(item, index)"
-                      />
-                    </div>
-                    <div v-else>
-                      <h4>
-                        {{
-                          item.date
-                            .substring(0, 10)
-                            .split("-")
-                            .reverse()
-                            .join("/")
-                        }}
-                      </h4>
-                      <span
-                        :class="{
-                          'text-decoration-line-through ': item.done == true,
-                        }"
-                        >{{ item.description }}</span
-                      >
-                    </div>
-                    <div>
-                      <span v-if="isSelected(item)">
-                        <v-icon @click="unselect()" size="20">
-                          mdi-close
-                        </v-icon>
-                        <v-icon @click="updateItem(item, index)" size="20">
-                          mdi-content-save
-                        </v-icon></span
-                      >
-                      <span v-else>
-                        <v-icon @click="select(item)" size="20">
-                          mdi-pencil
-                        </v-icon>
-                        <v-icon @click="removeItem(item, index)" size="20">
-                          mdi-delete
-                        </v-icon></span
-                      >
-                    </div>
-                  </v-card-text>
-                </v-card>
-              </template>
-            </v-hover>
-          </v-row>
-        </v-container>
-      </v-card>
-    </v-col>
+              </v-col></v-row
+            >
+          </v-card>
+        </v-row>
+
+        <v-col align="center" justify="center">
+          <v-card
+            outlined
+            class="scroll rounded-lg"
+            max-height="400"
+            width="500"
+          >
+            <v-container v-for="(item, index) in items" :key="item._id">
+              <v-row align="center" justify="center">
+                <v-hover>
+                  <template v-slot:default="{ hover }">
+                    <v-card
+                      @dblclick="doneTask(item)"
+                      color="blue lighten-5"
+                      class="ma-2"
+                      :elevation="hover ? 2 : 0"
+                      width="400"
+                    >
+                      <v-card-text class="d-flex justify-space-between ma-2">
+                        <v-avatar color="blue" rounded size="20">
+                          <span class="white--text">{{ index + 1 }}</span>
+                        </v-avatar>
+                        <div v-if="isSelected(item)">
+                          <v-text-field
+                            hide-details
+                            outlined
+                            dense
+                            v-model="editedDescription"
+                            @keyup.enter="updateItem(item, index)"
+                          />
+                        </div>
+                        <div v-else>
+                          <h4>
+                            {{
+                              item.date
+                                .substring(0, 10)
+                                .split("-")
+                                .reverse()
+                                .join("/")
+                            }}
+                          </h4>
+                          <span
+                            :class="{
+                              'text-decoration-line-through ':
+                                item.done == true,
+                            }"
+                            >{{ item.description }}</span
+                          >
+                        </div>
+                        <div>
+                          <span v-if="isSelected(item)">
+                            <v-icon @click="unselect()" size="20">
+                              mdi-close
+                            </v-icon>
+                            <v-icon @click="updateItem(item, index)" size="20">
+                              mdi-content-save
+                            </v-icon></span
+                          >
+                          <span v-else>
+                            <v-icon @click="select(item)" size="20">
+                              mdi-pencil
+                            </v-icon>
+                            <v-icon @click="removeItem(item, index)" size="20">
+                              mdi-delete
+                            </v-icon></span
+                          >
+                        </div>
+                      </v-card-text>
+                    </v-card>
+                  </template>
+                </v-hover>
+              </v-row>
+            </v-container>
+          </v-card>
+        </v-col>
+      </v-col>
+    </v-container>
   </v-container>
 </template>
 

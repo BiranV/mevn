@@ -60,11 +60,11 @@ export default {
 }
 .scroll {
   overflow-x: auto;
-  height: 480px;
+  height: 400px;
 }
 
 .scroll::-webkit-scrollbar {
-  width: 15px;
+  width: 9px;
 }
 
 .scroll::-webkit-scrollbar-thumb {
