@@ -23,6 +23,7 @@
                       dense
                       v-model="inputUserName"
                       placeholder="Please enter your username"
+                      @keyup.enter="login()"
                     /><v-col>
                       <v-btn
                         color="green"
