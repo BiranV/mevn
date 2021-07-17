@@ -33,7 +33,7 @@
 
         <v-col align="center" justify="center">
           <v-card elevation="0" class=" rounded-lg">
-            <v-container v-for="(item, index) in items" :key="item._id">
+            <v-container v-for="(item, index) in items.slice().reverse()" :key="item._id">
               <v-row align="center" justify="center">
                 <v-hover>
                   <template v-slot:default="{ hover }">
