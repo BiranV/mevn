@@ -4,7 +4,7 @@
       <h1 class="shadow-nested">To Do List</h1>
     </v-col>
 
-    <v-container>
+    <v-container style="overflow:auto">
       <v-col align="center" justify="center">
         <v-row align="center" justify="center" no-gutters>
           <v-card flat tile>
@@ -16,7 +16,7 @@
                 rounded
                 dense
                 v-model="description"
-                label="Add a task"
+                placeholder="Add a task"
                 @keyup.enter="addItem()"
               /><v-col>
                 <v-btn
@@ -32,12 +32,7 @@
         </v-row>
 
         <v-col align="center" justify="center">
-          <v-card
-            outlined
-            class="scroll rounded-lg"
-            max-height="400"
-            width="500"
-          >
+          <v-card elevation="0" class=" rounded-lg">
             <v-container v-for="(item, index) in items" :key="item._id">
               <v-row align="center" justify="center">
                 <v-hover>
@@ -131,7 +126,6 @@ export default {
 
   methods: {
     async initialize() {
-      let arr = [];
       const res = await axios.get("api/posts/");
       res.data.forEach((el) => {
         arr.push(el);

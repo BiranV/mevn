@@ -25,7 +25,7 @@
       <v-container>
         <v-row justify="center">
           <v-col cols="12" sm="8">
-            <v-card class="rounded-xl" height="600px">
+            <v-card class="scroll" height="600px">
               <router-view></router-view>
             </v-card>
           </v-col>
@@ -60,11 +60,10 @@ export default {
 }
 .scroll {
   overflow-x: auto;
-  height: 400px;
 }
 
 .scroll::-webkit-scrollbar {
-  width: 9px;
+  width: 11px;
 }
 
 .scroll::-webkit-scrollbar-thumb {

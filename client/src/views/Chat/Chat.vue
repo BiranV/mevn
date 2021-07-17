@@ -1,31 +1,55 @@
 <template>
-  <div v-if="this.username == '' || this.username == null" class="view login">
-    <v-container>
-      <v-col align="center">
-        <h1 class="shadow-nested">Login to Chat</h1>
-        <v-col sm="6">
-          <v-text-field
-            filled
-            rounded
-            dense
-            v-model="inputUserName"
-            placeholder="Please enter your username"
-          />
-          <v-btn small color="primary" @click="login()">Login</v-btn>
-        </v-col>
-      </v-col>
+  <div>
+    <v-container
+      v-if="this.username == '' || this.username == null"
+      class="view login"
+    >
+      <v-col align="center" justify="center">
+        <v-row align="center" justify="center">
+          <v-col align="center">
+            <h1 class="shadow-nested">Chat</h1>
+          </v-col>
+
+          <v-container>
+            <v-col align="center" justify="center">
+              <v-row align="center" justify="center" no-gutters>
+                <v-card flat tile>
+                  <v-row justify="center" align="center">
+                    <v-text-field
+                      hide-details
+                      filled
+                      outlined
+                      rounded
+                      dense
+                      v-model="inputUserName"
+                      placeholder="Please enter your username"
+                    /><v-col>
+                      <v-btn
+                        color="green"
+                        class="white--text"
+                        :disabled="!inputUserName"
+                        @click="login()"
+                        >Login</v-btn
+                      ></v-col
+                    >
+                  </v-row>
+                </v-card>
+              </v-row>
+            </v-col>
+          </v-container>
+        </v-row></v-col
+      >
     </v-container>
-  </div>
-  <div v-else>
-    <v-container>
+
+    <v-container v-else>
       <v-col align="center" justify="center">
         <v-row justify="end">
           <v-btn small color="primary" @click="logout()">Logout</v-btn>
         </v-row>
 
-        <h2>Welcome, {{ username }}</h2>
+        <h2 class="shadow-nested">Welcome, {{ username }}</h2>
 
-        <v-card outlined class="chat-box scroll rounded-lg">
+        <v-card outlined class="chat-box scrollchat rounded-lg">
           <div
             v-for="message in messages"
             :key="message.key"
@@ -40,8 +64,7 @@
           </div>
         </v-card>
       </v-col>
-    </v-container>
-    <v-container>
+
       <v-row no-gutters align="center" justify="center">
         <v-card flat tile>
           <v-row no-gutters justify="center" align="center">
@@ -96,7 +119,7 @@ export default {
   },
   methods: {
     scrollToEnd() {
-      var container = document.querySelector(".scroll");
+      var container = document.querySelector(".scrollchat");
       var scrollHeight = container.scrollHeight;
       container.scrollTop = scrollHeight;
     },
@@ -128,10 +151,25 @@ export default {
 };
 </script>
 
-<style lang="scss">
-.scroll {
-  overflow-y: scroll;
+<style scoped lang="scss">
+.scrollchat {
+  overflow-y: auto;
 }
+
+.scrollchat::-webkit-scrollbar {
+  width: 9px;
+}
+
+.scrollchat::-webkit-scrollbar-thumb {
+  background: #b0b0b0;
+  border: solid 3px #e6e6e6;
+  border-radius: 7px;
+}
+
+.scrollchat::-webkit-scrollbar-thumb:hover {
+  background: black;
+}
+
 .v-text-field {
   width: 300px;
 }
@@ -139,7 +177,7 @@ export default {
   width: 400px;
   height: 420px;
   padding: 30px;
-  .scroll {
+  .scrollchat {
     overflow: scroll;
   }
 
