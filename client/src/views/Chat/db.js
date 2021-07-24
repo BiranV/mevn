@@ -1,13 +1,14 @@
 import firebase from "firebase/app";
 import "firebase/database";
 
+
 const config = {
-  apiKey: "AIzaSyBgKXslx9_LUTvlNvUeOdu7Om3n6ZRv0_4",
-  authDomain: "vuechat-e5f21.firebaseapp.com",
-  projectId: "vuechat-e5f21",
-  storageBucket: "vuechat-e5f21.appspot.com",
-  messagingSenderId: "438629025318",
-  appId: "1:438629025318:web:a0513d91aa0452266408e7",
+  apiKey: "AIzaSyDYAZmDOt0cexkldIXh4u9AJZFIRp9UZWg",
+  authDomain: "biran-mevn.firebaseapp.com",
+  projectId: "biran-mevn",
+  storageBucket: "biran-mevn.appspot.com",
+  messagingSenderId: "987326901148",
+  appId: "1:987326901148:web:488779fcd14bf9aaaaf659"
 };
 
 const db = firebase.initializeApp(config);
