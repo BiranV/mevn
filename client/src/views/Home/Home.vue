@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-col align="center">
-      <h1 class="shadow">MY MEVN PROJECT</h1>
+      <h1 class="shadow">MY MEVN PROJECT!</h1>
     </v-col>
     <v-container>
       <v-row justify="center">

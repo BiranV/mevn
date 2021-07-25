@@ -6,10 +6,16 @@ const cors = require("cors");
 const morgan = require("morgan");
 const postAPI = require("./routes/api/posts");
 const path = require("path");
+const history = require("connect-history-api-fallback");
 
 app.use(cors());
 app.use(morgan("tiny"));
 app.use(express.json());
+app.use(
+  history({
+    index: "/",
+  })
+);
 
 mongoose
   .connect(MONGO_URI, {
