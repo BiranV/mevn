@@ -28,6 +28,10 @@ const routes = [
     name: "chat",
     component: Chat,
   },
+  {
+    path: '/*',
+    redirect: { name: 'home' }
+}
 ];
 
 const router = new VueRouter({
