@@ -123,6 +123,9 @@ export default {
   created() {
     this.initialize();
   },
+  mounted() {
+    this.initialize();
+  },
   methods: {
     async initialize() {
       let arr = [];
