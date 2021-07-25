@@ -123,17 +123,16 @@ export default {
   created() {
     this.initialize();
   },
-  mounted() {
-    this.initialize();
-  },
+
   methods: {
     async initialize() {
       let arr = [];
-      const res = await axios.get("api/posts/");
-      res.data.forEach((el) => {
-        arr.push(el);
+      await axios.get("api/posts/").then((res) => {
+        res.data.forEach((el) => {
+          arr.push(el);
+        });
+        this.items = arr;
       });
-      this.items = arr;
     },
     async addItem() {
       const response = await axios.post("api/posts/", {
