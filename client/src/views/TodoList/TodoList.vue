@@ -120,7 +120,7 @@ export default {
     };
   },
 
-  mounted() {
+  created() {
     this.initialize();
   },
   methods: {
