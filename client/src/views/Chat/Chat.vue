@@ -51,18 +51,18 @@
         <h2 class="shadow-nested">Welcome, {{ username }}</h2>
 
         <v-card outlined class="chat-box scrollchat rounded-lg">
-          <div
+          <section
             v-for="message in messages"
             :key="message.key"
             :class="
               message.username == username ? 'message current-user' : 'message'
             "
           >
-            <div class=" message-inner">
+            <div class="message-inner">
               <div class="username">{{ message.username }}</div>
               <div class="content">{{ message.content }}</div>
             </div>
-          </div>
+          </section>
         </v-card>
       </v-col>
 
@@ -153,6 +153,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
+
 .scrollchat {
   overflow-y: auto;
 }
@@ -184,22 +185,36 @@ export default {
 
   .message {
     display: flex;
+    margin-bottom: 15px;
+    text-align: left;
 
     .message-inner {
+      .username {
+        color: #888;
+        font-size: 16px;
+        margin-bottom: 5px;
+        padding-left: 15px;
+        padding-right: 15px;
+      }
       .content {
+        display: inline-block;
         padding: 10px 20px;
         background-color: #f3f3f3;
         border-radius: 999px;
         color: #333;
         font-size: 15px;
+        line-height: 1.2em;
         text-align: left;
       }
     }
     &.current-user {
-      margin-top: 10px;
+      margin-top: 30px;
       justify-content: flex-end;
       text-align: right;
+
       .message-inner {
+        max-width: 75%;
+
         .content {
           color: #fff;
           background-color: #1976d2;
