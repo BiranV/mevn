@@ -3,12 +3,12 @@ import "firebase/database";
 
 
 const config = {
-  apiKey: "AIzaSyDYAZmDOt0cexkldIXh4u9AJZFIRp9UZWg",
-  authDomain: "biran-mevn.firebaseapp.com",
-  projectId: "biran-mevn",
-  storageBucket: "biran-mevn.appspot.com",
-  messagingSenderId: "987326901148",
-  appId: "1:987326901148:web:488779fcd14bf9aaaaf659"
+  apiKey: "AIzaSyDaNnzbTd_wxatoJHXbIr33XDEHci4LG_Q",
+  authDomain: "firevuechat-99211.firebaseapp.com",
+  projectId: "firevuechat-99211",
+  storageBucket: "firevuechat-99211.appspot.com",
+  messagingSenderId: "623574080572",
+  appId: "1:623574080572:web:9204ed202ae4805c7b3739"
 };
 
 const db = firebase.initializeApp(config);
