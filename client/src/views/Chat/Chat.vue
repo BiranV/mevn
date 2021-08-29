@@ -23,17 +23,15 @@
                       dense
                       v-model="inputUserName"
                       placeholder="Please enter your username"
-                      @keyup.enter="login()"
-                    /><v-col>
-                      <v-btn
-                        color="green"
-                        class="white--text"
-                        :disabled="!inputUserName"
-                        @click="login()"
-                        >Login</v-btn
-                      ></v-col
-                    >
-                  </v-row>
+                      @keyup.enter="login()"/></v-row
+                  ><br />
+                  <v-btn
+                    color="green"
+                    class="white--text"
+                    :disabled="!inputUserName"
+                    @click="login()"
+                    >Login</v-btn
+                  >
                 </v-card>
               </v-row>
             </v-col>
@@ -153,7 +151,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
 .scrollchat {
   overflow-y: auto;
 }

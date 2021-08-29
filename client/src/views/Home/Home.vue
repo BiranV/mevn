@@ -23,9 +23,9 @@
                 <v-expand-transition>
                   <div v-show="showToDoList">
                     <v-card-text>
-                      This to do list app using MongoDB, Express.js & Node.js on
-                      the backend to create RESTful API, and Vue.js & Vuetify on
-                      the frontend.
+                      This to do list app is integrated with MongoDB, Express.js
+                      & Node.js on the backend to create RESTful API, and Vue.js
+                      & Vuetify on the frontend.
                     </v-card-text>
                     <v-col
                       ><v-row justify="center"
@@ -89,8 +89,8 @@
                 <v-expand-transition>
                   <div v-show="showChat">
                     <v-card-text>
-                      This chat app integrated with the real-time Firebase
-                      database for storing group chat messages.
+                      This chat app is integrated with Firebase's real-time
+                      database for storing group chat messaging.
                     </v-card-text>
                     <v-col
                       ><v-row justify="center"
