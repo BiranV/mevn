@@ -8,7 +8,7 @@
               <v-card
                 :elevation="hover ? 3 : 1"
                 outlined
-                class="pa-2 rounded-xl"
+                class="pa-2 rounded-0"
                 color="grey lighten-4"
               >
                 <v-card-title class="justify-center">Easy</v-card-title>
@@ -34,7 +34,7 @@
               <v-card
                 :elevation="hover ? 3 : 1"
                 outlined
-                class="pa-2 rounded-xl"
+                class="pa-2 rounded-0"
                 color="grey lighten-4"
               >
                 <v-card-title class="justify-center">Medium</v-card-title>
@@ -62,7 +62,7 @@
               <v-card
                 :elevation="hover ? 3 : 1"
                 outlined
-                class="pa-2 rounded-xl"
+                class="pa-2 rounded-0"
                 color="grey lighten-4"
               >
                 <v-card-title class="justify-center">Hard</v-card-title>
@@ -88,7 +88,7 @@
               <v-card
                 :elevation="hover ? 3 : 1"
                 outlined
-                class="pa-2 rounded-xl"
+                class="pa-2 rounded-0"
                 color="grey lighten-4"
               >
                 <v-card-title class="justify-center">Expert</v-card-title>
