@@ -3,4 +3,5 @@
 npm-debug.log
 /*.env
 .vscode
-config.js
+myconfig.js
+
