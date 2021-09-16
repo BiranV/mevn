@@ -135,22 +135,30 @@ export default {
       });
     },
     async addItem() {
-      const response = await axios.post("api/posts/", {
-        description: this.description,
-      });
-      this.items.push(response.data);
+      await axios
+        .post("api/posts/", {
+          description: this.description,
+        })
+        .then(() => {
+          this.initialize();
+          this.items.push(response.data);
+        });
       this.description = "";
     },
     async removeItem(item, index) {
-      await axios.delete("api/posts/" + item._id);
-      this.items.splice(index, 1);
+      await axios.delete("api/posts/" + item._id).then(() => {
+        this.items.splice(index, 1);
+      });
     },
     async updateItem(item, index) {
-      await axios.patch("api/posts/" + item._id, {
-        description: this.editedDescription,
-      });
-      this.initialize();
-      this.unselect();
+      await axios
+        .patch("api/posts/" + item._id, {
+          description: this.editedDescription,
+        })
+        .then(() => {
+          this.initialize();
+          this.unselect();
+        });
     },
     select(item) {
       this.selected = item;

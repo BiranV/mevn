@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const { PORT, MONGO_URI } = require("./config");
 const cors = require("cors");
 const morgan = require("morgan");
-const postAPI = require("./routes/api/posts");
+const postAPI = require("./routes/routes");
 const path = require("path");
 const history = require("connect-history-api-fallback");
 
@@ -27,6 +27,7 @@ mongoose
   .then(() => console.log("Connected to the database!"))
   .catch((err) => console.log(err));
 
+//routes prefix
 app.use("/api/posts", postAPI);
 
 if (process.env.NODE_ENV === "production") {
