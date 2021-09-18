@@ -13,7 +13,7 @@ app.use(morgan("tiny"));
 app.use(express.json());
 app.use(
   history({
-    index: "/default.html",
+    index: "",
   })
 );
 
