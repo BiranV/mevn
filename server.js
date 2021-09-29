@@ -1,4 +1,3 @@
-// const { PORT, MONGO_URI } = require("./config");
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
