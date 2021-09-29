@@ -1,4 +1,4 @@
-const { PORT, MONGO_URI } = require("./config");
+// const { PORT, MONGO_URI } = require("./config");
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
@@ -7,6 +7,7 @@ const morgan = require("morgan");
 const postAPI = require("./routes/routes");
 const path = require("path");
 const history = require("connect-history-api-fallback"); // for the ability to refresh a page
+require("dotenv").config();
 
 app.use(cors());
 app.use(morgan("tiny"));
@@ -18,7 +19,7 @@ app.use(
 );
 
 mongoose
-  .connect(MONGO_URI, {
+  .connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true,
@@ -36,4 +37,4 @@ if (process.env.NODE_ENV === "production") {
     res.sendFile(path.resolve(__dirname + "client", "dist", "index.html"));
   });
 }
-app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
+app.listen(process.env.PORT, () => console.log(`Server is running on port ${process.env.PORT}`));
