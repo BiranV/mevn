@@ -11,11 +11,11 @@ require("dotenv").config();
 app.use(cors());
 app.use(morgan("tiny"));
 app.use(express.json());
-app.use(
-  history({
-    index: "",
-  })
-);
+// app.use(
+//   history({
+//     index: "",
+//   })
+// );
 
 mongoose
   .connect(process.env.MONGO_URI, {
