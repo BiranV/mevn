@@ -76,7 +76,7 @@
               placeholder="Write a message..."
               @keyup.enter="sendMseeages()"
             /><v-col align="center">
-              <v-btn color="green" dark @click="sendMseeages()">Send</v-btn>
+              <v-btn color="green" small class="ml-2" dark @click="sendMseeages()">Send</v-btn>
             </v-col></v-row
           >
         </v-card>

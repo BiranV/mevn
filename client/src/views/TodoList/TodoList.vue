@@ -18,16 +18,16 @@
                 v-model="description"
                 placeholder="Add a task"
                 @keyup.enter="addItem()"
-              /><v-col>
-                <v-btn
-                  color="green"
-                  class="white--text"
-                  :disabled="!description"
-                  @click="addItem()"
-                  >ADD</v-btn
-                >
-              </v-col></v-row
-            >
+              />
+              <v-btn
+                color="green"
+                small
+                class="white--text ml-2"
+                :disabled="!description"
+                @click="addItem()"
+                >ADD</v-btn
+              >
+            </v-row>
           </v-card>
         </v-row>
 
